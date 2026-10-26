@@ -3,15 +3,16 @@ import SkillCard from "@/components/SkillCard";
 import Kartu from "@/components/Kartu";
 
 const hobi = [
-  { id: 1, nama: "Belajar pemrograman" },
-  { id: 2, nama: "Mendesain UI/UX" },
-  { id: 3, nama: "Mempelajari teknologi baru" },
+  { id: 1, nama: "Menonton film" },
+  { id: 2, nama: "Desain grafis" },
+  { id: 3, nama: "coding" },
+  { id: 4, nama: "Membaca" },
 ];
 
 const rencana = [
   { id: 1, nama: "Menjadi Web Developer" },
-  { id: 2, nama: "Mendalami UI/UX Design" },
-  { id: 3, nama: "Membuat proyek teknologi sendiri" },
+  { id: 2, nama: "Teknisi" },
+  { id: 3, nama: "Peneliti" },
 ];
 
 const keahlian = [
