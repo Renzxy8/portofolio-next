@@ -1,15 +1,14 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-
 import { supabase } from "@/lib/supabase";
 
 async function ambilProyek(slug) {
   const { data } = await supabase
-    .from("projects")
+    .from("project")
     .select("*")
     .eq("slug", slug)
     .single();
@@ -19,7 +18,6 @@ async function ambilProyek(slug) {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-
   const item = await ambilProyek(slug);
 
   if (!item) {
@@ -36,7 +34,6 @@ export async function generateMetadata({ params }) {
 
 export default async function DetailProyek({ params }) {
   const { slug } = await params;
-
   const item = await ambilProyek(slug);
 
   if (!item) {
@@ -45,7 +42,6 @@ export default async function DetailProyek({ params }) {
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
-
       <Link
         href="/proyek"
         className="text-sm font-semibold text-aksen hover:underline"
@@ -53,20 +49,15 @@ export default async function DetailProyek({ params }) {
         &larr; Kembali ke daftar proyek
       </Link>
 
-      <h1 className="mt-4 text-3xl font-bold text-primary">
+      <h1 className="mt-4 text-3xl font-bold text-primary md:text-4xl">
         {item.judul}
       </h1>
 
       <div className="mt-3 flex items-center gap-3">
-
-        <Badge>
-          {item.kategori}
-        </Badge>
-
+        <Badge>{item.kategori}</Badge>
         <span className="text-muted-foreground">
           Dibuat di {item.minggu}
         </span>
-
       </div>
 
       <Image
@@ -74,6 +65,7 @@ export default async function DetailProyek({ params }) {
         alt={`Tangkapan layar ${item.judul}`}
         width={640}
         height={420}
+        loading="eager"
         className="mt-6 h-auto w-full rounded-xl border border-border"
       />
 
@@ -88,11 +80,10 @@ export default async function DetailProyek({ params }) {
       </h2>
 
       <ul className="mt-3 list-disc pl-5">
-        {item.fitur.map((f) => (
+        {(item.fitur || []).map((f) => (
           <li key={f}>{f}</li>
         ))}
       </ul>
-
     </main>
   );
 }
