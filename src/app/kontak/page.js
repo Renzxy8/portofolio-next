@@ -37,7 +37,7 @@ export default function Kontak() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://github.com/BagusHidayat21"
+                  href="https://github.com/Renzxy8"
                   target="_blank"
                   className="text-aksen hover:underline"
                 >
@@ -46,10 +46,10 @@ export default function Kontak() {
               </li>
               <li>
                 <a
-                  href="mailto:andi.pratama@example.com"
+                  href="mailto:renow381@example.com"
                   className="text-aksen hover:underline"
                 >
-                  andi.pratama@example.com
+                  renow381@example.com
                 </a>
               </li>
             </ul>
