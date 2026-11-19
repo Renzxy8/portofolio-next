@@ -37,7 +37,7 @@ export default async function Home() {
       <Kartu judul="Keahlian">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {skills && skills.map((skill) => (
-            <SkillCard key={index} nama={skill.nama} level={skill.level} />
+            <SkillCard key={skill.id} nama={skill.nama} level={skill.level} />
           ))}
         </div>
       </Kartu>
