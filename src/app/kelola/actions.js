@@ -125,7 +125,7 @@ export async function tambahProyek(stateSebelum, formData) {
   }
 
   const hasil = await supabaseAdmin
-    .from("project")
+    .from("projects")
     .insert(proyek);
 
   if (hasil.error) {
@@ -165,7 +165,7 @@ export async function ubahProyek(stateSebelum, formData) {
   const id = formData.get("id");
 
   const hasil = await supabaseAdmin
-    .from("project")
+    .from("projects")
     .update(proyek)
     .eq("id", id);
 
@@ -193,7 +193,7 @@ export async function hapusProyek(formData) {
   const id = formData.get("id");
 
   await supabaseAdmin
-    .from("project")
+    .from("projects")
     .delete()
     .eq("id", id);
 

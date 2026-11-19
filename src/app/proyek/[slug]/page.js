@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 
 async function ambilProyek(slug) {
   const { data } = await supabase
-    .from("project")
+    .from("projects")
     .select("*")
     .eq("slug", slug)
     .single();

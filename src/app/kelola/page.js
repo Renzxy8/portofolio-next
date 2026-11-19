@@ -51,7 +51,7 @@
       .order("created_at", { ascending: false });
 
     const { data: daftarProyek } = await supabaseAdmin
-  .from("project")
+  .from("projects")
   .select("*")
   .order("created_at", { ascending: false });
 

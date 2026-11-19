@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function DaftarProyek() {
   const { data: proyek, error } = await supabase
-    .from("project")
+    .from("projects")
     .select("*");
 
   return (

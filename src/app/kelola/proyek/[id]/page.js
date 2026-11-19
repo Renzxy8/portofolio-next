@@ -16,7 +16,7 @@ export default async function UbahProyek({ params }) {
 
   const { id } = await params;
 const { data: proyek } = await supabaseAdmin
-  .from("project")
+  .from("projects")
   .select("*")
   .eq("id", id)
   .single();
