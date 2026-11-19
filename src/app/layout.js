@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "M.Miftakhul Huda | Portofolio",
-    template: "%s | M.Miftakhul Huda",
+    default: "Reno wahyu Saputra | Portofolio",
+    template: "%s | Reno Wahyu saputra",
   },
   description: "Portofolio M.Miftakhul Huda, siswa SMK calon Junior Web Developer di Kelas Industri UBIG",
 };
