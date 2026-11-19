@@ -1,4 +1,5 @@
 import FormKontak from "@/components/FormKontak";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata = {
   title: "Kontak",
@@ -14,44 +15,46 @@ export default function Kontak() {
       </h1>
 
       <p className="mt-3 text-muted-foreground">
-        Punya pertanyaan atau ingin bekerja sama?
-        Isi form berikut.
+        Punya pertanyaan atau ingin bekerja sama? Isi form berikut.
       </p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
-        <section className="rounded-xl border border-border bg-card p-6 shadow-sm md:col-span-2">
-          <FormKontak />
-        </section>
+        <Card className="md:col-span-2">
+          <CardContent>
+            <FormKontak />
+          </CardContent>
+        </Card>
 
-        <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="mb-4 text-xl font-bold text-primary">
-            Temukan Saya di
-          </h2>
-
-          <div className="space-y-4">
-            <div>
-              <p className="font-semibold text-muted-foreground">GitHub</p>
-              <a
-                href="https://github.com/Renzxy8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-red-700 hover:underline"
-              >
-                Kunjungi GitHub
-              </a>
-            </div>
-
-            <div>
-              <p className="font-semibold text-muted-foreground">Email</p>
-              <a
-                href="mailto:renow381@gmail.com"
-                className="text-sm text-red-700 hover:underline"
-              >
-                renow381@gmail.com
-              </a>
-            </div>
-          </div>
-        </section>
+        <Card>
+          <CardHeader>
+            <CardTitle
+              className="text-2xl font-bold text-primary"
+            >
+              Temukan Saya di
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://github.com/BagusHidayat21"
+                  target="_blank"
+                  className="text-aksen hover:underline"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:andi.pratama@example.com"
+                  className="text-aksen hover:underline"
+                >
+                  andi.pratama@example.com
+                </a>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
       </div>
     </main>
   );

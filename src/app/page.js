@@ -15,6 +15,11 @@ const skills = [
 ];
 
 export default async function Home() {
+  const { data: skills } = await supabase
+  .from("skills")
+  .select("*")
+  .order("id");
+
   const { data: proyekTerbaru } = await supabase
     .from("projects")
     .select("*")
@@ -31,7 +36,7 @@ export default async function Home() {
       {/* Keahlian */}
       <Kartu judul="Keahlian">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {skills.map((skill, index) => (
+          {skills && skills.map((skill) => (
             <SkillCard key={index} nama={skill.nama} level={skill.level} />
           ))}
         </div>

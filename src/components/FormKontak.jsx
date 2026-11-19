@@ -1,10 +1,9 @@
-
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
-const kelasInput =
-  "mt-1 w-full rounded-lg border border-input bg-card p-2";
+const kelasInput = "mt-1 w-full rounded-lg border border-input bg-card p-2";
 
 export default function FormKontak() {
   // Kode 6.8: State semua isian
@@ -28,8 +27,7 @@ export default function FormKontak() {
 
     // Pemeriksaan Email
     if (!email.includes("@")) {
-      errorBaru.email =
-        "Email harus memuat tanda @, contoh nama@gmail.com.";
+      errorBaru.email = "Email harus memuat tanda @, contoh nama@gmail.com.";
     }
 
     // Kode 6.10: Pemeriksaan tambahan
@@ -51,11 +49,7 @@ export default function FormKontak() {
   }
 
   return (
-    <form
-      onSubmit={kirim}
-      noValidate
-      className="space-y-4"
-    >
+    <form onSubmit={kirim} noValidate className="space-y-4">
       {/* Nama */}
       <div>
         <label htmlFor="nama" className="block font-semibold">
@@ -72,11 +66,7 @@ export default function FormKontak() {
           className={kelasInput}
         />
 
-        {error.nama && (
-          <p className="mt-1 text-sm text-aksen">
-            {error.nama}
-          </p>
-        )}
+        {error.nama && <p className="mt-1 text-sm text-aksen">{error.nama}</p>}
       </div>
 
       {/* Email */}
@@ -96,9 +86,7 @@ export default function FormKontak() {
         />
 
         {error.email && (
-          <p className="mt-1 text-sm text-aksen">
-            {error.email}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.email}</p>
         )}
       </div>
 
@@ -118,11 +106,7 @@ export default function FormKontak() {
           className={kelasInput}
         />
 
-        {error.hp && (
-          <p className="mt-1 text-sm text-aksen">
-            {error.hp}
-          </p>
-        )}
+        {error.hp && <p className="mt-1 text-sm text-aksen">{error.hp}</p>}
       </div>
 
       {/* Keperluan - Kode 6.9 */}
@@ -145,9 +129,7 @@ export default function FormKontak() {
         </select>
 
         {error.keperluan && (
-          <p className="mt-1 text-sm text-aksen">
-            {error.keperluan}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.keperluan}</p>
         )}
       </div>
 
@@ -169,23 +151,18 @@ export default function FormKontak() {
         />
 
         {error.pesan && (
-          <p className="mt-1 text-sm text-aksen">
-            {error.pesan}
-          </p>
+          <p className="mt-1 text-sm text-aksen">{error.pesan}</p>
         )}
       </div>
 
       {/* Tombol */}
-      <button
-        type="submit"
-        className="rounded-lg bg-red-700 px-5 py-2 font-semibold text-white hover:bg-red-800"
-      >
+      <Button type="submit" size="lg">
         Kirim Pesan
-      </button>
+      </Button>
 
       <p className="text-sm text-gray-500">
-        Form ini belum mengirim pesan. Pengiriman pesan
-        akan dibuat di Minggu 15.
+        Form ini belum mengirim pesan. Pengiriman pesan akan dibuat di Minggu
+        15.
       </p>
 
       {/* Kode 6.11: Pesan berhasil */}
